@@ -124,13 +124,27 @@ def main():
 
 
     next_iter_names = {
+        # 'china': ['maslovasia', 'china80s', 'raspp_info', 'prchand', 'awaken_dragon', 'asiatica_ru'],
+        # 'africa': ['zangaro', 'africablack', 'natasakado_official', 'dnobangui', 'africafordummies', 'westernafrica', 'meskob', 'catcherinsudan', 'africanists'],
+        # 'middleeast': ['syriaagency', 'turk_gambit_ca', 'shatergaddafi', 'turkkulubu', 'mideastr', 'tangermanar', 'marocrus', 'arabstatesofgulf', 'assadstash', 'meastru', 'strana_tuaregov']
+        # 'latamerica': ['pqntc1', 'privetfidel', 'altimurla','favelasemrus', 'pincheponchito', 'laprimaveradelpatriarca', 'lat_america', 'tupireport', 'venezuelanewsnetwork', 'sputnikmundo']
+        # 'news_ru': ['boris_rozhin', 'rt_russian', 'infantmilitario', 'svarschiki', 'divgen'],
+        # 'news_ua': ['rezident_ua', 'taynaya_kantselyariya', 'the_military_analytics', 'spletnicca'],
+        #'IranPakistanAfganistan': ['IranPakistanAfganistan', 'afgbezparandzhi'],
+        'KNDR': ['RusEmbDPRK'],
+        'Iran': ['irandezhurniy', 'paxIranica'],
+        'Afganistan': ['afgbezparandzhi'],
+        'Ethiopia': ['Ethiopia_tezeta', 'meskob'],
+        #'Pakistan': [''],
         'China': ['maslovasia', 'china80s', 'raspp_info', 'prchand', 'awaken_dragon', 'asiatica_ru'],
-        'Africa': ['zangaro', 'africablack', 'natasakado_official', 'dnobangui', 'africafordummies', 'westernafrica', 'meskob', 'CatcherInSudan', 'africanists'],
-        'MiddleEAST': ['syriaagency', 'turk_gambit_ca', 'ShaterGaddafi', 'turkkulubu', 'mideastr', 'tangermanar', 'marocrus', 'arabstatesofgulf', 'AssadStash', 'MEASTru', 'strana_tuaregov']
-        'LatAmerica': ['pqntc1', 'privetfidel', 'altimurLA','favelasemrus', 'pincheponchito', 'LaPrimaveradelPatriarca', 'Lat_America', 'tupireport', 'VenezuelaNewsNetwork', 'SputnikMundo']
-
-
-
+        'India': ['india_tv2020', 'ninerasas', 'indiareads', 'speciallassi', 'indiaanalytics', 'Indosphere', 'India_sangrahalaya'],
+        'Turkey': ['turkeyabout'],
+        'Libya': ['ShaterGaddafi'],
+        'Morocco': ['tangermanar', 'marocrus'],
+        'Syria': ['NovostiDamask'],
+        'CAR': ['dnobangui'],# Центрально-африканская Республика
+        'Sudan': ['CatcherInSudan'],
+        'Argentina': ['argentinarusa'],
     }
 
     for item in next_iter_names.keys():
