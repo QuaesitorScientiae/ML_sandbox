@@ -2,6 +2,12 @@
 
 # datasets
 /datasets
+/RUSinGlobPolit_Dataset
+/Tass_Dataset
+/Tass_Dataset_tag
+/telegram_Dataset
+RUSinGlobPolit_Dataset.json
+*.bin
 
 # images
 /images
