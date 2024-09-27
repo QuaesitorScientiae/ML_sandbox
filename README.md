@@ -1,9 +1,17 @@
 # ML_sandbox
 Список файлов:<br>
+Создание БД текстов:
 Dataset_telegram_2_category.py - программа для создания базы данных из сообщений в telegram. Сообщения представлены в текстовых файлах и отсортированны по тематике. <br>
-Multy_Class_001.ipynb - модель многоклассовой классификации текстовых сообщений<br>
-gensim_corpus_W2V.py - создание модели gensim (W2V) на основе своего корпуса текстов, размещеных ф тестовых файлах формата pdf, txt, fb2
-2_3_gramm_LogReg.ipynb - модель многоклассовой классификации текстовых сообщений (CountVectorizer, LogisticRegression, ngram)
+Россия в глобальной политике_get_dataset.ipynb - Программа для формирования базы данных текстов статей с тегами, размещенных на сайте https://globalaffairs.ru (Журнал \"Россия в глобальной политике\")<br>
+Get_dataset_with_tag_tass_001.ipynb - Программа для формирования базы данных текстов статей с тегами, размещенных на сайте https://tass.ru/ по тегам<br>
+Get_dataset_with_tag.ipynb программа для создания базы данных из сообщений в telegram. С учетом тегов в тексте.
+Get_dataset_with_chek_model_RF.ipynb - программа для создания базы данных из сообщений в telegram. Сообщения представлены в текстовых файлах и отсортированны по тематике. с использованием модели классификации (RandomForestClassifier, ngram) <br>
+
+Модели:
+gensim_corpus_W2V.py - создание модели gensim (W2V) на основе своего корпуса текстов, размещеных в тестовых файлах формата pdf, txt, fb2
+Countries_LogReg_v005_with_ngram.ipynb - программа классификации текстов (присваивания тегов стран) на основе ML (LogisticRegression, ngram)
+Countries_DecisionTreeClassifier_ngram_v0_005.ipynb - программа классификации текстов (присваивания тегов стран) на основе ML (RandomForestClassifier, ngram). Полная БД текстов
+Countries_DecisionTreeClassifier_ngram_v1_001.ipynb - программа классификации текстов (присваивания тегов стран) на основе ML (RandomForestClassifier, ngram). БД текстов только ТАСС
 
 
 
