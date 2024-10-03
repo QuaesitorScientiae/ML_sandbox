@@ -1,6 +1,6 @@
 
 
-def get_telegram_adv(user_name, Dir_Path= 'Set_A', iter_number=25, text_limit=True):
+def get_telegram_adv(user_name, Dir_Path= 'Set_A', iter_number=65, text_limit=True):
     '''
     :param user_name - Название телеграм канала:
     :param iter_number - Количество иттераций по дате публикации постов каждый шаг 20 постов max:
@@ -34,7 +34,8 @@ def get_telegram_adv(user_name, Dir_Path= 'Set_A', iter_number=25, text_limit=Tr
         time.sleep(random.randrange(1, 10))
         text = get_text(r, user_name, Dir_Path)
         number = re.findall(r"data-post=\"{}\/(\d+)".format(user_name), r.text)
-        # print(number)
+        print(number)
+        #print(r.text)
         if not len(number) == 0:
             last_post_num = int(number[-1])
             post_num = last_post_num
@@ -61,17 +62,21 @@ def get_text(r, filename, Dir_Path):
     popular = soup.find_all('div', {'class': 'tgme_widget_message_text'})
     iterr = 0
     for item in popular:
-        soup_temp = BeautifulSoup(item.text, 'lxml')
-        text_post = re.sub(r'https?:\/\/.*[\r\n]*', '', soup_temp.text, flags=re.MULTILINE)
-        text = text + '\n'+ text_post
-        if (len(text_post) > 150) and (len(text_post) < 2000) and (lang_detect(text_post) == 'ru'):
-            try:
-                with open('./telegram_Dataset/{}/@{}_telegram.txt'.format(Dir_Path, filename+'_'+str(iterr)), "w", encoding="utf-8") as some_file:
-                    print(text_post, file=some_file)
-                    some_file.close()
-                    iterr = iterr+1
-            except Exception as ex:
-                print(ex)
+        try:
+            item.string = re.sub('<br/>', ' ', str(item))
+            soup_temp = BeautifulSoup(item.text, 'lxml')
+            text_post = re.sub(r'https?:\/\/.*[\r\n]*', '', soup_temp.text, flags=re.MULTILINE)
+            text = text + '\n'+ text_post
+            if (len(text_post) > 150) and (len(text_post) < 20000) and (lang_detect(text_post) == 'ru'):
+                try:
+                    with open('./telegram_Dataset/{}/@{}_telegram.txt'.format(Dir_Path, filename+'_'+str(iterr)), "w", encoding="utf-8") as some_file:
+                        print(text_post, file=some_file)
+                        some_file.close()
+                        iterr = iterr+1
+                except Exception as ex:
+                    print(ex)
+        except Exception as ex:
+            print(ex)
     return text
 
 def lang_detect (text = ''):
@@ -131,20 +136,27 @@ def main():
         # 'news_ru': ['boris_rozhin', 'rt_russian', 'infantmilitario', 'svarschiki', 'divgen'],
         # 'news_ua': ['rezident_ua', 'taynaya_kantselyariya', 'the_military_analytics', 'spletnicca'],
         #'IranPakistanAfganistan': ['IranPakistanAfganistan', 'afgbezparandzhi'],
-        'KNDR': ['RusEmbDPRK'],
-        'Iran': ['irandezhurniy', 'paxIranica'],
-        'Afganistan': ['afgbezparandzhi'],
-        'Ethiopia': ['Ethiopia_tezeta', 'meskob'],
-        #'Pakistan': [''],
-        'China': ['maslovasia', 'china80s', 'raspp_info', 'prchand', 'awaken_dragon', 'asiatica_ru'],
-        'India': ['india_tv2020', 'ninerasas', 'indiareads', 'speciallassi', 'indiaanalytics', 'Indosphere', 'India_sangrahalaya'],
-        'Turkey': ['turkeyabout'],
-        'Libya': ['ShaterGaddafi'],
-        'Morocco': ['tangermanar', 'marocrus'],
-        'Syria': ['NovostiDamask'],
-        'CAR': ['dnobangui'],# Центрально-африканская Республика
-        'Sudan': ['CatcherInSudan'],
-        'Argentina': ['argentinarusa'],
+        #'KNDR': ['DPRK_KNDR', 'welcomeDPRK'],
+        # 'Iran': ['irandezhurniy', 'paxIranica'],
+        # 'Afganistan': ['afgbezparandzhi'],
+        # 'Ethiopia': ['Ethiopia_tezeta', 'meskob'],
+        # #'Pakistan': [''],
+        # 'China': ['maslovasia', 'china80s', 'raspp_info', 'prchand', 'awaken_dragon', 'asiatica_ru'],
+        #'China': ['maslovasia', 'china80s', 'raspp_info', 'prchand'],
+        # 'India': ['india_tv2020', 'ninerasas', 'indiareads', 'speciallassi', 'indiaanalytics', 'Indosphere', 'India_sangrahalaya'],
+        # 'Turkey': ['turkeyabout'],
+        # 'Libya': ['ShaterGaddafi'],
+        #'Morocco': ['tangermanar', 'marocrus'],
+        # 'Syria': ['NovostiDamask'],
+        # 'CAR': ['dnobangui'],# Центрально-африканская Республика
+        # 'Sudan': ['CatcherInSudan'],
+        #'Argentina': ['argentinarusa'],
+        #'Poland': ['warszawanovpl'],
+        #'Brasil': ['Bras24'],
+        #'Burkina Faso': ['gdrusbf']
+        'DRK_Congo': ['randentans']
+        # 'mexico':['novostimexico']
+        #'Libya': ['bengazi_exit'],
     }
 
     for item in next_iter_names.keys():

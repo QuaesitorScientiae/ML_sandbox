@@ -6,11 +6,12 @@ Dataset_telegram_2_category.py - программа для создания ба
 Get_dataset_with_tag_tass_001.ipynb - Программа для формирования базы данных текстов статей с тегами, размещенных на сайте https://tass.ru/ по тегам<br>
 Get_dataset_with_tag.ipynb программа для создания базы данных из сообщений в telegram. С учетом тегов в тексте.<br>
 Get_dataset_with_chek_model_RF.ipynb - программа для создания базы данных из сообщений в telegram. Сообщения представлены в текстовых файлах и отсортированны по тематике. с использованием модели классификации (RandomForestClassifier, ngram) <br>
+Cleaning the DB.ipynb - Программа для очистки БД текстов по странам с использованием модели (contry_post-model_ngram_rf_RandomForest.bin)
 
 Модели:<br>
 gensim_corpus_W2V.py - создание модели gensim (W2V) на основе своего корпуса текстов, размещеных в тестовых файлах формата pdf, txt, fb2<br>
 Countries_LogReg_v005_with_ngram.ipynb - программа классификации текстов (присваивания тегов стран) на основе ML (LogisticRegression, ngram)<br>
-Countries_DecisionTreeClassifier_ngram_v0_005.ipynb - программа классификации текстов (присваивания тегов стран) на основе ML (RandomForestClassifier, ngram). Полная БД текстов<br>
+Countries_DecisionTreeClassifier_ngram_v3_012.ipynb - программа классификации текстов (присваивания тегов стран) на основе ML (RandomForestClassifier, ngram). Полная БД текстов<br>
 Countries_DecisionTreeClassifier_ngram_v1_001.ipynb - программа классификации текстов (присваивания тегов стран) на основе ML (RandomForestClassifier, ngram). БД текстов только ТАСС<br>
 
 
