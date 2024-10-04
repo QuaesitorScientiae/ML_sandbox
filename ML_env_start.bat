@@ -1,5 +1,4 @@
 @echo on
 
-call D:\ML\ML_env\Scripts\activate D:\ML
-jupyter notebook
+start cmd /k D:\ML\ML_env\Scripts\activate 
 pause
