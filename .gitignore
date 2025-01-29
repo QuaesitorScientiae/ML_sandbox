@@ -9,6 +9,7 @@
 /Archive
 RUSinGlobPolit_Dataset.json
 *.bin
+*.pkl
 
 # images
 /images
