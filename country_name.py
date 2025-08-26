@@ -15,7 +15,7 @@ country_name_rus = {'Afganistan': 'Афганистан', 'Algeria': 'Алжир
                       'litva': 'Литва', 'livan': 'Ливан', 'namibiya': 'Намибия', 'nigeriya': 'Нигерия', 'oman': 'Оман', 'palestina': 'Палестина',
                       'paragvay': 'Парагвай', 'peru': 'Перу', 'portugaliya': 'Португалия', 'ssha': 'США', 'tanzaniya': 'Танзания',
                       'tayvan': 'КНР (Тайвань)', 'uganda': 'Уганда', 'vengriya': 'Венгрия', 'zambiya': 'Замбия', 'vetnam': 'Вьетнам',
-                    'myanma': 'Мьянма'}
+                    'myanma': 'Мьянма', 'filippiny': 'Филиппины'}
 
 
 country_name_rus_T = {'Алжир': 'Algeria', 'Ангола': 'angola', 'Аргентина': 'Argentina', 'Афганистан': 'Afganistan', 'Бангладеш': 'Bangladesh',
@@ -30,7 +30,7 @@ country_name_rus_T = {'Алжир': 'Algeria', 'Ангола': 'angola', 'Арг
                       'Нигер': 'Niger', 'Нигерия': 'nigeriya', 'ОАЭ': 'Oae', 'Оман': 'oman', 'Пакистан': 'Pakistan', 'Палестина': 'palestina', 'Парагвай': 'paragvay',
                       'Перу': 'peru', 'Португалия': 'portugaliya', 'Республика Конго': 'RK_Congo', 'Руанда': 'Ruanda', 'США': 'ssha',
                       'Саудовская Аравия': 'Saudovskaya_araviya', 'Сенегал': 'Senegal', 'Сирия': 'Syria', 'Судан': 'Sudan', 'Таиланд': 'Tailand',
-                      'Танзания': 'tanzaniya', 'Тунис': 'Tunis', 'Турция': 'Turkey', 'Уганда': 'uganda', 'Уругвай': 'Urugvay', 'Франция': 'franciya',
+                      'Танзания': 'tanzaniya', 'Тунис': 'Tunis', 'Турция': 'Turkey', 'Уганда': 'uganda', 'Уругвай': 'Urugvay', 'Филиппины': 'filippiny','Франция': 'franciya',
                       'Центрально-Африканская Республика': 'CAR', 'Чад': 'Chad', 'Чили': 'Chili', 'Экваториальная Гвинея': 'ekvatorialnaya-gvineya',
                       'Эфиопия ': 'Ethiopia', 'ЮАР': 'Yuar', 'Южная Корея': 'Respublika-koreya', 'Япония': 'Yaponiya'}
 
@@ -73,7 +73,7 @@ country_links_BRE = {'Алжир': 'https://old.bigenc.ru/geography/text/3260130
                      "Кот-д'Ивуар": 'https://old.bigenc.ru/geography/text/2103312', 'Намибия': 'https://old.bigenc.ru/geography/text/2247323',
                      'Нигерия': 'https://bigenc.ru/c/nigeriia-3e8a7f', 'Палестина': 'https://bigenc.ru/c/gosudarstvo-palestina-164a94',
                      'Уганда': 'https://old.bigenc.ru/geography/text/4214563', 'Замбия': 'https://bigenc.ru/c/zambiia-9dfc3a',
-                     'Вьетнам': 'https://old.bigenc.ru/geography/text/4357956', 'Мьянма': 'https://old.bigenc.ru/geography/text/2241273'}
+                     'Мьянма': 'https://old.bigenc.ru/geography/text/2241273', 'Филиппины': 'https://bigenc.ru/c/filippiny-8eb74b'}
 
 
 if __name__ == "__main__":
@@ -84,7 +84,7 @@ if __name__ == "__main__":
     print({key: val for key, val in sorted(country_name_rus.items(), key=lambda ele: ele[0])})
     print ({key: val for key, val in sorted(country_name_rus_T.items(), key = lambda ele: ele[0])})
     print (country_name_rus_T.keys())
-
+    print(len(country_name_rus.keys()))
     for item in country_name_rus_T.keys():
         if item not in country_links_BRE.keys():
             print(item)
