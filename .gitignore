@@ -14,5 +14,7 @@ RUSinGlobPolit_Dataset.json
 # images
 /images
 
+/OLD
+
 /.ipynb_checkpoints
 /__pycache__
